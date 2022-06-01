@@ -10,16 +10,19 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:determined-ai.helloWorld"
+		"onCommand:determined-ai.openInDetermined"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "determined-ai.helloWorld",
-				"title": "Hello World"
+				"command": "determined-ai.openInDetermined",
+				"title": "Open in Determined"
 			}
-		]
+		],
+		"menus": {
+			"explorer/context": [{"when": "explorerResourceIsFolder", "command": "determined-ai.openInDetermined"}]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
